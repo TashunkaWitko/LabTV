@@ -1,0 +1,26 @@
+  <form class="form-inline my-2 my-lg-0"  (ngSubmit)="submitSearch()">
+    <input class="form-control mr-sm-2" type="text" name="term" [(ngModel)]="term" placeholder="Cerca un film" aria-label="Search">
+    <button class="btn btn-primary" type="submit">Cerca</button>
+  </form>
+
+ <div class="errormessage"  *ngIf="results.length == 0">
+   <div [ngClass]="myClassnull" role="alert">
+      Siamo spiacenti, non siamo riusciti a trovare il film che stavi cercando.
+   </div>
+ </div>
+
+    <div class="container">
+      <div class="card" style="width:18rem" *ngFor="let item of results">
+          <a [routerLink]="['/dettaglio', item.id]"><img *ngIf="item.poster_path" class="card-img-top" src="https://image.tmdb.org/t/p/w500{{item.poster_path}}"alt="Descrizione immagine">
+            <img  *ngIf="!item.poster_path" class="card-img-top" src="../../assets/images/logo-tipo.png" alt="Immagine non disponibile">
+          
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{item.title}}</h4><br>
+            <p class="card-text">Data di uscita: {{item.release_date}}</p>
+            <p class="card-text">Voto della critica: {{item.vote_average}}</p>
+          </div>
+      </div>
+  </div>
+
+  

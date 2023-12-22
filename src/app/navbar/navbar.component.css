@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 20px auto;
+    width: 100%;
+    background-color: blanchedalmond;
+    padding: 5px;
+    min-height: 70px;
+    border-radius: 0.375em;
+    justify-content:space-between;
+    text-align: center;
+}
+
+.nav_txt{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    width: 25%;
+}
+
+.navbar a:hover{
+    color: brown;
+}
+
+.nav_img img{
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+.nav_txt{
+    display: none;
+}
+
+.nav_img{
+    width: 25%;
+    padding: 0;
+    
+}
+
+.nav_img img{
+    display: block;
+    margin: 0 auto;
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    
+}
+
+#home img{
+    object-position: -0 -128px;
+}
+
+#search img{
+    object-position: -0 -96px;
+}
+
+#login img{
+    object-position: -0 -64px;
+}
+
+#register img{
+    object-position: -0 -32px;
+}
+
+#contacts img{
+    object-position: 0 0;
+}
+
+
+}

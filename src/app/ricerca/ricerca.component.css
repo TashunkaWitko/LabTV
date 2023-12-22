@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 85%;
+}
+
+form{
+    margin: 15px auto;
+    height: 60px;
+    width: 40%;
+    display: flex;
+    padding: 5px;
+}
+
+form button{
+    margin: 0 5px;
+
+}
+.errormessage{
+    width: 50%;
+    margin: 20px auto;
+}
+.card{
+    margin: 15px auto;
+    border: 2px solid black;
+}
+
+.card:hover{
+    border: 2px solid blanchedalmond;
+}

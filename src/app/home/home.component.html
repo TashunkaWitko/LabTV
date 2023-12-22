@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#slide2" data-slide-to="1"></li>
+    <li data-target="#slide3" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a [routerLink]="['/dettaglio', listaMovies[i].id]"><img class="d-block w-100" src="https://image.tmdb.org/t/p/w1280{{listaMovies[i].backdrop_path}}" alt="Immagine carosello"></a>
+    </div>
+
+  <a class="carousel-control-prev" (click)="previouslide()"  role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+    <span class="sr-only"></span>
+  </a>
+  <a class="carousel-control-next" href="javascript:void(0)" (click)="nextslide()"  role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only"></span>
+  </a>
+  </div>
+</div>
+
+
+<!--Inizio lista dei film-->
+<div class="container">
+    <div class="card" style="width:18rem" *ngFor="let item of listaMovies">
+        <a [routerLink]="['/dettaglio', item.id]"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{item.poster_path}}"alt="Descrizione immagine"></a>
+        <div class="card-body">
+          <h4 class="card-title">{{item.title}}</h4><br>
+          <p class="card-text">Data di uscita: {{item.release_date}}</p>
+          <p class="card-text">Voto della critica: {{item.vote_average}}</p>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Sezione dei Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        id="facebook"
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://it-it.facebook.com/" target="_blank"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img src="../../assets/images/css_sprites.png" alt="logo Facebook">
+      </a>
+
+      <!-- Twitter -->
+      <a
+      id="twitter"
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Dit" target="_blank"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img src="../../assets/images/css_sprites.png" alt="logo Twitter">
+      </a>
+
+      <!-- Yotubes -->
+      <a
+      id="youtube"
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.youtube.com/" target="_blank"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img src="../../assets/images/css_sprites.png" alt="logo Youtube">
+      </a>
+
+      <!-- Instagram -->
+      <a
+      id="instagram"
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.instagram.com/" target="_blank"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img src="../../assets/images/css_sprites.png" alt="logo Instagram">
+      </a>
+
+      <a
+      id="labtv"
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.labfortraining.it/corsi-web/corso-full-stack-development?gclid=Cj0KCQjwn_OlBhDhARIsAG2y6zPWgXyvCHM8ct71MvrMfziHiWVjV3kS4engJ2-8QMKlYESaPKmebJ4aArCgEALw_wcB" target="_blank"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><img src="../../assets/images/logo.png" alt="logo Instagram">
+      </a>
+
+    </section>
+
+  </div>
+  <!-- Grid container -->
+
+</footer>

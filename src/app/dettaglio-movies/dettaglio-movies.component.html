@@ -1,0 +1,49 @@
+<div class="dettaglio">
+
+    <div class="container">
+      <div class="card mb-3">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{dettaglio[12][1]}}" alt="Immagine locandina del film">
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="card mb-3">
+        <div class="card-body">
+
+              <h3 class="card-title">{{dettaglio[21][1]}}</h3><br>
+              <h4>Trama</h4><p class="card-text"> {{dettaglio[10][1]}}</p> 
+              <h4>Generi</h4><p class="card-text"><i *ngFor="let item of generi">{{item.name}}, </i></p>
+              <!-- Effettuo un ciclo ngFor sui generi che si trovano come un sottoarray dentro il  macro-array dettaglio -->
+              <h4>Cast</h4><p class="card-text">{{castDetail[0].name}}, {{castDetail[1].name}}, {{castDetail[2].name}}, {{castDetail[3].name}}</p> 
+              <!--Inserisco solo i primi 4 attori, solitamente i più importanti, inserire ogni singolo attore richiede un semplice ngFor ma renderebbe il contenuto visivamente "affollato"-->
+              <h4>Regista</h4><p class="card-text">{{directorDetail[0].name}}</p> 
+
+              <p class="card-text"><small class="text-muted">Id: {{dettaglio[6][1]}}</small>
+    
+              <h4>Guarda il trailer:</h4> 
+              <div class="video">
+                <iframe [src]= "safeUrl" frameborder="0" allowfullscreen></iframe>
+              </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<h2>Ecco alcuni titoli che potrebbero interessarti</h2>
+
+<div class="container listasimili"  >
+      
+      <div class="card" style="width:18rem" *ngFor="let item of similarMovies" >
+          <a  href="javascript:void(0)" (click)="GetDetailFromDetail(item.id)"><img *ngIf="item.poster_path" class="card-img-top" src="https://image.tmdb.org/t/p/w500{{item.poster_path}} "alt="Descrizione immagine">
+          <img  *ngIf="!item.poster_path" class="card-img-top" src="../../assets/images/logo-tipo.png" alt="Immagine non disponibile">
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{item.title}}</h4><br>
+            <p class="card-text">Data di uscita: {{item.release_date}}</p>
+            <p class="card-text">Voto della critica: {{item.vote_average}}</p>
+          </div>
+      </div>
+
+     
+</div>

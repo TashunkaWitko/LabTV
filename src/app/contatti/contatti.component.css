@@ -1,0 +1,31 @@
+h3{
+    display: block;
+    margin: 15px auto;
+}
+
+
+form{
+    width: 80%;
+    margin: 10px auto;
+    
+}
+
+.form-group{
+    padding: 5px;
+}
+
+
+#exampleFormControlTextarea1{
+    max-height: 200px;
+}
+
+
+.alert-success{
+    width:50%;
+    margin: 20px auto;
+    
+}
+
+.form-check{
+    margin: 10px auto;
+}
