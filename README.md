@@ -1,4 +1,4 @@
-# LabTV
+# LabTV Angular
 LabForTraning project emulating the functionalities of streaming services
 
 
